@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Главарь страница {% endblock %}
+
+{% block content %}
+    <ul>
+        {% for product in products %}
+            <li>{{ product.title }}</li>
+            <li>{{ product.cost }}</li>
+            <li>{{ product.description }}</li>
+            <li>{{ product.category }}</li>
+            <img src="{{ product.image_url }}" alt="{{ product.title }}">
+        {% endfor %}
+    </ul>
+{% endblock %}
