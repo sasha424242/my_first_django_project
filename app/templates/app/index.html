@@ -1,15 +1,17 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Главарь страница {% endblock %}
 
 {% block content %}
-    <ul>
+    <div class="products">
         {% for product in products %}
-            <li>{{ product.title }}</li>
-            <li>{{ product.cost }}</li>
-            <li>{{ product.description }}</li>
-            <li>{{ product.category }}</li>
+        <div class="product-card">
+            <h2>{{ product.title }}</h2>
+            <p>{{ product.cost }}</p>
+            <p>{{ product.description }}</p>
+            <p>{{ product.category }}</p>
             <img src="{{ product.image_url }}" alt="{{ product.title }}">
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}
